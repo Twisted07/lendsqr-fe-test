@@ -1,0 +1,37 @@
+@use 'variables' as var;
+@use 'mixins';
+@use 'reset';
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap');
+
+
+// Global Utilities
+.text-primary { color: var.$primary-color; }
+.text-secondary { color: var.$secondary-color; }
+.text-bold { font-weight: 600; }
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: opacity 0.2s;
+  
+  &:hover {
+    opacity: 0.9;
+  }
+  
+  &-primary {
+    background-color: var.$primary-color;
+    color: var.$bg-white;
+    text-transform: uppercase;
+  }
+  
+  &-outline-secondary {
+    border: 1px solid var.$secondary-color;
+    color: var.$secondary-color;
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 10px 20px;
+  }
+}

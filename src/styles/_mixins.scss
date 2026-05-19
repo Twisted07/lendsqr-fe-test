@@ -1,0 +1,63 @@
+@use './variables' as var;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin card-shadow {
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  background-color: var.$bg-white;
+  border-radius: 4px;
+}
+
+// @mixin respond-to($breakpoint) {
+//   @if $breakpoint == 'sm' {
+//     @media (min-width: $breakpoint-sm) { @content; }
+//   } @else if $breakpoint == 'md' {
+//     @media (min-width: $breakpoint-md) { @content; }
+//   } @else if $breakpoint == 'lg' {
+//     @media (min-width: $breakpoint-lg) { @content; }
+//   } @else if $breakpoint == 'xl' {
+//     @media (min-width: $breakpoint-xl) { @content; }
+//   } @else if $breakpoint == 'mobile' {
+//     @media (max-width: $breakpoint-md - 1px) { @content; }
+//   }
+// }
+@mixin respond-to($device) {
+  @if $device == 'mobile' {
+    @media (max-width: 37.5em) {    //600px
+      @content;
+    }
+  }
+
+  @if $device == 'tab-port' {
+    @media (max-width: 56.23em) {   //900px
+      @content;
+    }
+  }
+
+  @if $device == 'tab-land' {
+    @media (max-width: 75em) {      //1200px
+      @content;
+    }
+  }
+
+  @if $device == 'big-screen' {
+    @media (min-width: 112.5em) {   //1800px
+      @content;
+    }
+}
+}

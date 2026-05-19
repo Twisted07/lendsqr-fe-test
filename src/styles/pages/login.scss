@@ -1,0 +1,153 @@
+@use '../variables' as var;
+@use '../mixins' as mix;
+
+.login {
+  &__container {
+    min-height: 100vh;
+    display: flex;
+    background-color: var.$bg-white;
+    position: relative;
+
+    @include mix.respond-to('mobile') {
+      flex-direction: column;
+    }
+  }
+
+  &__left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10rem;
+    background-color: var.$bg-white;
+
+    @include mix.respond-to('mobile') {
+      padding: 4rem;
+      display: none; // Hide image on mobile for simplicity, or just adjust
+    }
+
+    @include mix.respond-to('tab-port') {
+      padding: 5rem;
+    }
+
+    .logo {
+      margin-bottom: 4rem;
+      img {
+        width: 17rem;
+      }
+    }
+
+    .illustration {
+      flex: 1;
+      @include mix.flex-center;
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &__right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10rem;
+    box-shadow: 0px 15px 90px rgba(0, 0, 0, 0.03);
+
+    @include mix.respond-to('mobile') {
+      padding: 4rem 5rem;
+      box-shadow: none;
+    }
+
+    @include mix.respond-to('tab-port') {
+      padding: 5rem;
+    }
+
+    .logo {
+      display: none;
+      img {
+        width: 20rem;
+      }
+
+      @include mix.respond-to('mobile'){
+        display: block;
+        position: fixed;
+        top: 10rem;
+        left: 5rem;
+      }
+    }
+
+    .welcome-text {
+      margin-bottom: 4rem;
+
+      h1 {
+        font-size: 4rem;
+        color: var.$secondary-color;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 2rem;
+        color: var.$text-color;
+        font-weight: 400
+      }
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+
+    .input-group {
+      position: relative;
+
+      input {
+        width: 100%;
+        padding: 1.6rem;
+        border: 2px solid var.$border-color;
+        border-radius: .5rem;
+        font-size: 1.4rem;
+        color: var.$text-color;
+
+        &:focus {
+          border-color: var.$primary-color;
+        }
+      }
+
+      .toggle-password {
+        position: absolute;
+        right: 1.6rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var.$primary-color;
+        font-weight: 600;
+        font-size: 1.2rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+    }
+
+    .forgot-password {
+      color: var.$primary-color;
+      font-weight: 600;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 1.6rem;
+      background-color: var.$primary-color;
+      color: var.$bg-white;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 1rem;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@use './variables' as var;
+@use './mixins' as mix;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: var.$font-family;
+  color: var.$text-color;
+  background-color: var.$bg-color;
+  overflow-x: hidden;
+
+  /**
+   * This resets the font size according to the view port to enhance responsiveness
+   * 16px = 1rem
+   * 16 * 62.5% = 10px
+   * 10px = 1rem
+   */
+  font-size: 62.5%;
+
+  @include mix.respond-to('big-screen') {
+    font-size: 75%;
+  }
+
+  @include mix.respond-to('tab-land') {
+    font-size: 56.25%;
+  }
+
+  @include mix.respond-to('tab-port') {
+    font-size: 50%;
+  }
+
+  @include mix.respond-to('mobile') {
+    font-size: 30%;
+  }
+
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+input {
+  font-family: inherit;
+  outline: none;
+}
