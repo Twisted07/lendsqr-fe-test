@@ -1,0 +1,234 @@
+@use '../variables' as var;
+@use '../mixins' as mix;
+
+.users-page {
+  .page-title {
+    font-size: 2.4rem;
+    color: var.$secondary-color;
+    font-weight: 500;
+    margin-bottom: 4rem;
+  }
+
+  .stats-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+
+    @include mix.respond-to('tab-land') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mix.respond-to('special-small') {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .stat-card {
+      @include mix.card-shadow;
+      padding: 2rem 3rem;
+
+      .icon {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        @include mix.flex-center;
+        margin-bottom: 1.5rem;
+
+        &.users {
+          background-color: rgba(223, 24, 255, 0.1);
+          color: #DF18FF;
+        }
+
+        &.active {
+          background-color: rgba(87, 24, 255, 0.1);
+          color: #5718FF;
+        }
+
+        &.loans {
+          background-color: rgba(245, 95, 68, 0.1);
+          color: #F55F44;
+        }
+
+        &.savings {
+          background-color: rgba(255, 51, 102, 0.1);
+          color: #FF3366;
+        }
+      }
+
+      h3 {
+        font-size: 1.4rem;
+        color: var.$text-color;
+        text-transform: uppercase;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+
+      .value {
+        font-size: 2.4rem;
+        color: var.$secondary-color;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.table {
+  &__container {
+    @include mix.card-shadow;
+    padding: 3rem;
+    overflow-x: auto;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 80rem;
+      overflow-x: scroll; // For horizontal scrolling on mobile
+
+      th {
+        text-align: left;
+        padding: 1.5rem .5rem;
+        color: var.$text-color;
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-transform: uppercase;
+
+        .th-content {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          cursor: pointer;
+        }
+      }
+
+      td {
+        padding: 2rem .5rem;
+        border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+        color: var.$text-color;
+        font-size: 1.4rem;
+        min-width: 14.7rem;
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &__cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__filter--icon {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+}
+
+.action-btn {
+  color: var.$text-color;
+  padding: .5rem;
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.status-badge {
+  padding: .8rem 1.5rem;
+  border-radius: 10rem;
+  font-size: 1.4rem;
+  display: inline-block;
+
+  &.active {
+    color: var.$success-color;
+    background-color: rgba(57, 205, 98, 0.06);
+  }
+
+  &.inactive {
+    color: var.$text-color;
+    background-color: rgba(84, 95, 125, 0.06);
+  }
+
+  &.pending {
+    color: var.$warning-color;
+    background-color: rgba(233, 178, 0, 0.06);
+  }
+
+  &.blacklisted {
+    color: var.$danger-color;
+    background-color: rgba(228, 3, 59, 0.06);
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+
+  &__info {
+    color: var.$text-color;
+    font-size: 1.4rem;
+
+    select {
+      background: rgba(33, 63, 125, 0.1);
+      border: none;
+      padding: .5rem 1rem;
+      border-radius: .4rem;
+      margin: 0 1rem;
+      color: var.$secondary-color;
+      font-weight: 500;
+      font-size: 1.4rem;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    button {
+      width: 2.4rem;
+      height: 2.4rem;
+      @include mix.flex-center;
+      border-radius: .4rem;
+      background: rgba(33, 63, 125, 0.1);
+      color: var.$secondary-color;
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+
+    &--pages {
+      display: flex;
+      gap: 1.5rem;
+
+      span {
+        font-size: 1.6rem;
+        color: var.$text-light;
+        cursor: pointer;
+
+        &.active {
+          color: var.$text-color;
+          font-weight: 500;
+        }
+      }
+    }
+
+    &--chevron {
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+  }
+}
+
+.loader {
+  font-size: 1.4rem;;
+}

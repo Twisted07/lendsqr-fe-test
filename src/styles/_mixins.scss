@@ -37,6 +37,11 @@
 //   }
 // }
 @mixin respond-to($device) {
+  @if $device == 'special-small' {
+    @media (max-width: 30em) {  //480px
+      @content;
+    }
+  }
   @if $device == 'mobile' {
     @media (max-width: 37.5em) {    //600px
       @content;
