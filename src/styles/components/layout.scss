@@ -20,56 +20,6 @@
     right: 0;
     z-index: 100;
 
-    .search {
-      display: flex;
-      align-items: center;
-      gap: 10rem;
-
-      @include mix.respond-to('tab-land') {
-
-      }
-
-
-      &__box {
-        display: flex;
-        align-items: center;
-
-        input {
-          width: 40rem;
-          height: 4rem;
-          border: 1px solid rgba(33, 63, 125, 0.2);
-          border-radius: 8px 0 0 8px;
-          padding: 0 2rem;
-          font-size: 1.4rem;
-
-          &::placeholder {
-            color: rgba(84, 95, 125, 0.6);
-          }
-
-          @include mix.respond-to('tab-port') {
-            width: 30rem;
-          }
-        }
-
-        button {
-          width: 5.6rem;
-          height: 4rem;
-          background-color: var.$primary-color;
-          border-radius: 0 8px 8px 0;
-          @include mix.flex-center;
-          color: white;
-        }
-      }
-
-      &__logo {
-        text-decoration: none;
-
-        img {
-          width: 14.48rem;
-        }
-      }
-    }
-
     .user {
       &__actions {
         display: flex;
@@ -163,6 +113,7 @@
 
       @include mix.respond-to('tab-land') {
         transform: translateX(-100%);
+
         &.open {
           transform: translateX(0);
         }
@@ -270,4 +221,85 @@
   color: var.$secondary-color;
   font-size: 1.6rem;
   margin-right: 2rem;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+
+  &__box {
+    display: flex; // Hide on all smaller screens by default
+    align-items: center;
+
+    @media (min-width: 75em) {
+      display: none;
+    }
+
+    &.full-width {
+      width: 100%;
+    }
+
+    &.big-screen {
+      display: none;
+      // Override display none ONLY when screen width is strictly greater than 1200px
+      @media (min-width: 75em) {
+        display: flex;
+      }
+    }
+  
+
+    input {
+      width: 40rem;
+      height: 4rem;
+      border: 1px solid rgba(33, 63, 125, 0.2);
+      border-radius: 8px 0 0 8px;
+      padding: 0 2rem;
+      font-size: 1.4rem;
+
+      &::placeholder {
+        color: rgba(84, 95, 125, 0.6);
+      }
+
+      @include mix.respond-to('tab-port') {
+        width: 100%;
+      }
+    }
+
+    button {
+      width: 5.6rem;
+      height: 4rem;
+      background-color: var.$primary-color;
+      border-radius: 0 8px 8px 0;
+      @include mix.flex-center;
+      color: white;
+    }
+  }
+
+  &__logo {
+    text-decoration: none;
+
+    img {
+      width: 14.48rem;
+    }
+  }
+}
+
+.notifications {
+
+  &__icon {
+    width: 1.967rem;
+    height: 2.274rem;
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
 }

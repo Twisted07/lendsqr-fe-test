@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Outlet, NavLink, Link } from 'react-router-dom';
-import { 
-  Briefcase, Home, Users as UsersIcon, UserCheck, 
-  UserX, Handshake, PiggyBank, HandCoins, 
-  UserCog, ScrollText, BarChart3, SlidersHorizontal, 
+import {
+  Briefcase, Home, Users as UsersIcon, UserCheck,
+  UserX, Handshake, PiggyBank, HandCoins,
+  UserCog, ScrollText, BarChart3, SlidersHorizontal,
   BadgePercent, ClipboardList, Bell, Search,
   ChevronDown,
   MoreVertical,
@@ -13,14 +13,14 @@ import {
 import '../../styles/components/layout.scss';
 import { IoIosSearch, IoMdArrowDropdown } from 'react-icons/io';
 
-const DashboardLayout : React.FC = () => {
+const DashboardLayout: React.FC = () => {
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
 
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
   const toggleUserMenu = () => setIsUserMenuOpen(!isUserMenuOpen);
-  
+
   return (
     <div className="dashboard-layout">
       <nav className="topbar">
@@ -28,20 +28,31 @@ const DashboardLayout : React.FC = () => {
           <Link to="/" className="search__logo">
             <img src="/logo.svg" alt="Lendsqr logo" />
           </Link>
-          <div className="search__box">
+
+          <div className="search__box big-screen">
             <input type="text" placeholder="Search for anything" />
-            <button aria-label="Search"><IoIosSearch size={20} /></button>
+            <button aria-label="Search" className='search__icon'><IoIosSearch /></button>
           </div>
+
         </div>
 
         <button className="user__menu-btn" onClick={toggleUserMenu}>
           <MoreVertical className='user__menu-btn--icon' color="#213F7D" />
         </button>
-        
+
         <div className={`user__actions ${isUserMenuOpen ? 'open' : ''}`}>
+          <div className="search__box full-width">
+            <input type="text" placeholder="Search for anything" />
+            <button aria-label="Search" className='search__icon'><IoIosSearch /></button>
+          </div>
+
           <a href="#" className="docs-link">Docs</a>
           <div className="notifications">
-            <img src='/notification_bell.svg' alt="Notification bell" />
+            {
+              isUserMenuOpen ?
+                (<span className='notifications__text'>Notifications</span>) :
+                <img src='/notification_bell.svg' alt="Notification bell" className='notifications__icon' />
+            }
           </div>
           <div className="user__profile">
             <img src={`https://ui-avatars.com/api/?name=Adedeji+A&background=random`} alt="User" />
@@ -50,13 +61,13 @@ const DashboardLayout : React.FC = () => {
           </div>
         </div>
       </nav>
-      
+
       <div className="dashboard-body">
         {isSidebarOpen && (
           <div className="sidebar__overlay" onClick={() => setIsSidebarOpen(false)}></div>
         )}
-        
-        <button 
+
+        <button
           className={`sidebar__bookmark-btn ${isSidebarOpen ? 'open' : ''}`}
           onClick={toggleSidebar}
         >
@@ -71,7 +82,7 @@ const DashboardLayout : React.FC = () => {
                 </button>
               </li>
               <li>
-                <NavLink to="/dashboard" className={({isActive}) => isActive ? 'active' : ''}>
+                <NavLink to="/dashboard" className={({ isActive }) => isActive ? 'active' : ''}>
                   <Home size={16} /> Dashboard
                 </NavLink>
               </li>
@@ -82,7 +93,7 @@ const DashboardLayout : React.FC = () => {
             <div className="sidebar__section--title">Customers</div>
             <ul>
               <li>
-                <NavLink to="/users" className={({isActive}) => isActive ? 'active' : ''}>
+                <NavLink to="/users" className={({ isActive }) => isActive ? 'active' : ''}>
                   <UsersIcon size={16} /> Users
                 </NavLink>
               </li>
@@ -111,7 +122,7 @@ const DashboardLayout : React.FC = () => {
             </ul>
           </div>
 
-          <div className="sidebar-section">
+          <div className="sidebar__section">
             <div className="sidebar__section--title">Settings</div>
             <ul>
               <li><button><SlidersHorizontal size={16} /> Preferences</button></li>
@@ -120,7 +131,7 @@ const DashboardLayout : React.FC = () => {
             </ul>
           </div>
         </aside>
-        
+
         <main className="main-content">
           <Outlet />
         </main>
