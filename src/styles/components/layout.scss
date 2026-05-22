@@ -9,7 +9,7 @@
   .topbar {
     height: 10rem;
     background-color: var.$bg-white;
-    box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+    box-shadow: 3px 0px 2rem rgba(0, 0, 0, 0.04);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -96,14 +96,14 @@
 
   .dashboard-body {
     display: flex;
-    margin-top: 10rem; // account for topbar
+    margin-top: 10rem;
     flex: 1;
 
     .sidebar {
       width: 28rem;
       background-color: var.$bg-white;
       box-shadow: 0px .5rem 2rem rgba(0, 0, 0, 0.04);
-      padding: 3rem 0;
+      padding-top: 3rem;
       position: fixed;
       top: 10rem;
       bottom: 0;
@@ -181,16 +181,73 @@
               width: 100%;
               text-align: left;
               opacity: 0.8;
+              border-left: 0.3rem solid transparent;
+              transition: all 0.2s ease;
+            }
 
-              &:hover,
-              &.active {
+            // Apply the active, hover, and default styling rule ONLY to list items that are NOT the first child
+            &:not(.organisation) {
+
+              a,
+              button {
+
+                &:hover,
+                &.active {
+                  opacity: 1;
+                  color: var.$secondary-color;
+                  background-color: rgba(57, 205, 204, 0.06);
+                  border-left: 0.3rem solid var.$primary-color;
+                }
+              }
+            }
+
+            &.organisation {
+
+              a,
+              button {
+                cursor: default;
                 opacity: 1;
-                color: var.$secondary-color;
-                background-color: rgba(57, 205, 204, 0.06);
-                border-left: 0.3rem solid var.$primary-color;
+                margin-bottom: 3rem;
               }
             }
           }
+        }
+
+      }
+
+      &__icon {
+        width: 1.6rem;
+      }
+
+      &__footer {
+        margin-top: 5rem;
+        border-top: 1px solid var.$border-color;
+        width: 100%;
+        text-align: left;
+        padding: 1.2rem 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 4rem;
+        color: var.$text-color;
+
+
+        &--btn {
+          display: flex;
+          padding-top: 1rem;
+          color: var.$text-color;
+          align-items: center;
+          gap: 1.5rem;
+          font-size: 1.6rem;
+          opacity: 0.8;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+
+        &--small-text {
+          font-size: 1.2rem;
         }
       }
     }
@@ -207,6 +264,10 @@
         padding: 3rem 2rem;
         width: 100dvw;
         overflow-x: scroll;
+      }
+
+      @include mix.respond-to('tab-port') {
+        margin-top: 2rem;
       }
 
       @include mix.respond-to('mobile') {
@@ -248,12 +309,13 @@
 
     &.big-screen {
       display: none;
+
       // Override display none ONLY when screen width is strictly greater than 1200px
       @media (min-width: 75em) {
         display: flex;
       }
     }
-  
+
 
     input {
       width: 40rem;

@@ -8,68 +8,46 @@
     font-weight: 500;
     margin-bottom: 4rem;
   }
+}
 
-  .stats-cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    margin-bottom: 4rem;
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
 
-    @include mix.respond-to('tab-land') {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  @include mix.respond-to('tab-land') {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    @include mix.respond-to('special-small') {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
+  @include mix.respond-to('special-small') {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 
-    .stat-card {
-      @include mix.card-shadow;
-      padding: 2rem 3rem;
+  &__card {
+    @include mix.card-shadow;
+    padding: 2rem 3rem;
+  }
 
-      .icon {
-        width: 4rem;
-        height: 4rem;
-        border-radius: 50%;
-        @include mix.flex-center;
-        margin-bottom: 1.5rem;
+  &__title {
+    font-size: 1.4rem;
+    color: var.$text-color;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
 
-        &.users {
-          background-color: rgba(223, 24, 255, 0.1);
-          color: #DF18FF;
-        }
+  &__value {
+    font-size: 2.4rem;
+    color: var.$secondary-color;
+    font-weight: 600;
+  }
 
-        &.active {
-          background-color: rgba(87, 24, 255, 0.1);
-          color: #5718FF;
-        }
-
-        &.loans {
-          background-color: rgba(245, 95, 68, 0.1);
-          color: #F55F44;
-        }
-
-        &.savings {
-          background-color: rgba(255, 51, 102, 0.1);
-          color: #FF3366;
-        }
-      }
-
-      h3 {
-        font-size: 1.4rem;
-        color: var.$text-color;
-        text-transform: uppercase;
-        font-weight: 500;
-        margin-bottom: 1rem;
-      }
-
-      .value {
-        font-size: 2.4rem;
-        color: var.$secondary-color;
-        font-weight: 600;
-      }
-    }
+  &__icon {
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -230,5 +208,6 @@
 }
 
 .loader {
-  font-size: 1.4rem;;
+  font-size: 1.4rem;
+  ;
 }

@@ -1,15 +1,11 @@
 @use '../variables' as var;
 @use '../mixins' as mix;
 
-.user-details-page {
-  .back-btn {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    color: var.$text-color;
-    font-size: 1.6rem;
-  }
+/**
+* This contains all the styles used in the user-details page, including the components.
+*/
 
+.user-details-page {
   .header {
     display: flex;
     justify-content: space-between;
@@ -26,239 +22,260 @@
     &__buttons {
       display: flex;
       gap: 2rem;
-
-      button {
-        padding: 1.2rem 2rem;
-        border-radius: 0.8rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        font-size: 1.4rem;
-        letter-spacing: 0.1em;
-
-        &.blacklist {
-          color: var.$danger-color;
-          border: 1px solid var.$danger-color;
-        }
-
-        &.activate {
-          color: var.$primary-color;
-          border: 1px solid var.$primary-color;
-        }
-      }
-    }
-  }
-
-  .profile-header-card {
-    @include mix.card-shadow;
-    padding: 3rem 3rem 0 3rem;
-    margin-bottom: 3rem;
-
-    @include mix.respond-to('mobile') {
-      padding: 1.5rem;
-    }
-
-    .profile-info {
-      display: flex;
-      align-items: center;
-      margin-bottom: 4rem;
-
-      &>*+* {
-        border-left: 1px solid var.$border-color;
-        height: 8rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        /* Adjust color and width as needed */
-
-        @include mix.respond-to('mobile') {
-          border-left: none;
-          border-bottom: 1px solid var.$border-color;
-        }
-      }
-
-      @include mix.respond-to('mobile') {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 2rem;
-      }
-
-      .avatar-section {
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-        padding-right: 3rem;
-
-        @include mix.respond-to('mobile') {
-          padding-bottom: 2rem;
-          width: 100%;
-        }
-
-        .avatar {
-          width: 10rem;
-        }
-
-        .name-id {
-          h2 {
-            font-size: 2.2rem;
-            color: var.$secondary-color;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-          }
-
-          p {
-            font-size: 1.4rem;
-            color: var.$text-color;
-          }
-        }
-      }
-
-      .tier-section {
-        padding: 0 3rem;
-
-        @include mix.respond-to('mobile') {
-          padding: 2rem 0;
-          width: 100%;
-        }
-
-        p {
-          font-size: 1.4rem;
-          color: var.$text-color;
-          margin-bottom: 1rem;
-        }
-
-        .stars {
-          display: flex;
-          gap: 0.5rem;
-          color: var.$warning-color;
-        }
-      }
-
-      .balance-section {
-        padding-left: 3rem;
-
-        @include mix.respond-to('mobile') {
-          padding-left: 0;
-          padding-top: 2rem;
-        }
-
-        h2 {
-          font-size: 2.2rem;
-          color: var.$secondary-color;
-          margin-bottom: 0.5rem;
-          font-weight: 500;
-        }
-
-        p {
-          font-size: 1.2rem;
-          color: var.$secondary-color;
-        }
-      }
-    }
-
-    .tabs {
-      display: flex;
-      gap: 3rem;
-      justify-content: space-between;
-      overflow-x: auto;
-
-      .tab {
-        padding-bottom: 1rem;
-        padding-inline: 2rem;
-        font-size: 1.6rem;
-        color: rgba(0, 0, 0, 0.8);
-        cursor: pointer;
-        white-space: nowrap;
-
-        &.active {
-          color: var.$primary-color;
-          border-bottom: 0.2rem solid var.$primary-color;
-        }
-      }
-    }
-  }
-
-  .details-card {
-    @include mix.card-shadow;
-    padding: 3rem;
-
-    @include mix.respond-to('mobile') {
-      padding: 1.5rem
-    }
-
-    .section {
-      padding: 3rem 0;
-      border-bottom: 0.1rem solid var.$border-color;
-
-      &:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
-      }
-
-      &:first-child {
-        padding-top: 0;
-      }
-
-      h3 {
-        font-size: 1.6rem;
-        color: var.$secondary-color;
-        font-weight: 500;
-        margin-bottom: 3rem;
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: 2fr 2fr 2fr 2fr 1fr;
-        row-gap: 3rem;
-        column-gap: 5rem;
-
-        @include mix.respond-to('tab-land') {
-          grid-template-columns: repeat(4, 1fr);
-        }
-
-        @include mix.respond-to('tab-port') {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        @include mix.respond-to('mobile') {
-          grid-template-columns: 1fr;
-        }
-
-        &__4 {
-          display: grid;
-          grid-template-columns: 3fr 3fr 3fr 2fr;
-          grid-auto-flow: row;
-          row-gap: 4rem;
-
-          @include mix.respond-to('tab-port') {
-            grid-template-columns: repeat(2, 1fr);
-          }
-
-          @include mix.respond-to('mobile') {
-            grid-template-columns: 1fr;
-          }
-
-        }
-      }
     }
   }
 }
 
-.detail-item {
-  .label {
-    font-size: 1.2rem;
-    color: var.$text-color;
-    text-transform: uppercase;
-    margin-bottom: .8rem;
+
+.profile-header-card {
+  @include mix.card-shadow;
+  padding: 3rem 3rem 0 3rem;
+  margin-bottom: 3rem;
+
+  @include mix.respond-to('mobile') {
+    padding: 1.5rem;
+  }
+}
+
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4rem;
+
+  &>*+* {
+    border-left: 1px solid var.$border-color;
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Adjust color and width as needed */
+
+    @include mix.respond-to('mobile') {
+      border-left: none;
+      border-bottom: 1px solid var.$border-color;
+    }
   }
 
-  .value {
-    font-size: 1.6rem;
-    color: var.$text-color;
+  @include mix.respond-to('mobile') {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+}
+
+
+.avatar-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-right: 3rem;
+
+  @include mix.respond-to('mobile') {
+    padding-bottom: 2rem;
+    width: 100%;
+  }
+
+  .avatar {
+    width: 10rem;
+  }
+
+  .name-id {
+    h2 {
+      font-size: 2.2rem;
+      color: var.$secondary-color;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    p {
+      font-size: 1.4rem;
+      color: var.$text-color;
+    }
+  }
+}
+
+
+.balance-section {
+  padding-left: 3rem;
+
+  @include mix.respond-to('mobile') {
+    padding-left: 0;
+    padding-top: 2rem;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+    color: var.$secondary-color;
+    margin-bottom: 0.5rem;
     font-weight: 500;
   }
+
+  p {
+    font-size: 1.2rem;
+    color: var.$secondary-color;
+  }
 }
 
-.back-arrow {
-  width: 2.672rem;
-  height: .938rem;
+
+.tier-section {
+  padding: 0 3rem;
+
+  @include mix.respond-to('mobile') {
+    padding: 2rem 0;
+    width: 100%;
+  }
+
+  p {
+    font-size: 1.4rem;
+    color: var.$text-color;
+    margin-bottom: 1rem;
+  }
+
+  .stars {
+    display: flex;
+    gap: 0.5rem;
+    color: var.$warning-color;
+  }
+}
+
+
+.details-card {
+  @include mix.card-shadow;
+  padding: 3rem;
+
+  @include mix.respond-to('mobile') {
+    padding: 1.5rem
+  }
+}
+
+
+.tabs {
+  display: flex;
+  gap: 3rem;
+  justify-content: space-between;
+  overflow-x: auto;
+
+  .tab {
+    padding-bottom: 1rem;
+    padding-inline: 2rem;
+    font-size: 1.6rem;
+    color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    white-space: nowrap;
+
+    &.active {
+      color: var.$primary-color;
+      border-bottom: 0.2rem solid var.$primary-color;
+    }
+  }
+}
+
+
+.btn {
+  padding: 1.2rem 2rem;
+  border-radius: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+
+  &__back {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var.$text-color;
+    font-size: 1.6rem;
+
+    &--arrow {
+      width: 2.672rem;
+      height: .938rem;
+    }
+  }
+
+  &.blacklist {
+    color: var.$danger-color;
+    border: 1px solid var.$danger-color;
+  }
+
+  &.activate {
+    color: var.$primary-color;
+    border: 1px solid var.$primary-color;
+  }
+
+}
+
+
+
+.section {
+  padding: 3rem 0;
+  border-bottom: 0.1rem solid var.$border-color;
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+    color: var.$secondary-color;
+    font-weight: 500;
+    margin-bottom: 3rem;
+  }
+
+  &__detail {
+    &--label {
+      font-size: 1.2rem;
+      color: var.$text-color;
+      text-transform: uppercase;
+      margin-bottom: .8rem;
+    }
+
+    &--value {
+      font-size: 1.6rem;
+      color: var.$text-color;
+      font-weight: 500;
+    }
+  }
+}
+
+
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 2fr 1fr;
+  row-gap: 3rem;
+  column-gap: 5rem;
+
+  @include mix.respond-to('tab-land') {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include mix.respond-to('tab-port') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mix.respond-to('mobile') {
+    grid-template-columns: 1fr;
+  }
+
+  &__4 {
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr 2fr;
+    grid-auto-flow: row;
+    row-gap: 4rem;
+
+    @include mix.respond-to('tab-port') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mix.respond-to('mobile') {
+      grid-template-columns: 1fr;
+    }
+
+  }
 }
