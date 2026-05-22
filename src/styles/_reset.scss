@@ -21,10 +21,10 @@ html, body {
    * 16 * 62.5% = 10px
    * 10px = 1rem
    */
-  font-size: 62.5%;
+  font-size: 56.25%;
 
   @include mix.respond-to('big-screen') {
-    font-size: 75%;
+    font-size: 62.25%;
   }
 
   @include mix.respond-to('tab-land') {
@@ -32,11 +32,11 @@ html, body {
   }
 
   @include mix.respond-to('tab-port') {
-    font-size: 50%;
+    font-size: 62.5%;
   }
 
   @include mix.respond-to('mobile') {
-    font-size: 30%;
+    font-size: 60%;
   }
 
 }

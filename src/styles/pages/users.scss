@@ -149,6 +149,12 @@
   align-items: center;
   margin-top: 3rem;
 
+  @include mix.respond-to('mobile') {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    row-gap: 2rem;
+  }
+
   &__info {
     color: var.$text-color;
     font-size: 1.4rem;
@@ -169,6 +175,7 @@
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    align-self: flex-end;
 
     button {
       width: 2.4rem;
