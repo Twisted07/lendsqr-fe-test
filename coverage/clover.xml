@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1779481419046" clover="3.2.0">
+  <project timestamp="1779481419046" name="All files">
+    <metrics statements="148" coveredstatements="141" conditionals="63" coveredconditionals="52" methods="52" coveredmethods="47" elements="263" coveredelements="240" complexity="0" loc="148" ncloc="148" packages="6" files="19" classes="19"/>
+    <package name="components">
+      <metrics statements="57" coveredstatements="52" conditionals="25" coveredconditionals="23" methods="33" coveredmethods="28"/>
+      <file name="Button.tsx" path="/Users/macbookpro/work/lendsqrr/src/components/Button.tsx">
+        <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+      </file>
+      <file name="Card.tsx" path="/Users/macbookpro/work/lendsqrr/src/components/Card.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+      </file>
+      <file name="CardSection.tsx" path="/Users/macbookpro/work/lendsqrr/src/components/CardSection.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="12" count="22" type="stmt"/>
+      </file>
+      <file name="Pagination.tsx" path="/Users/macbookpro/work/lendsqrr/src/components/Pagination.tsx">
+        <metrics statements="8" coveredstatements="6" conditionals="12" coveredconditionals="10" methods="7" coveredmethods="5"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="14" count="12" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="25" count="25" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="40" count="0" type="cond" truecount="1" falsecount="1"/>
+        <line num="45" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="49" count="1" type="stmt"/>
+      </file>
+      <file name="Stats.tsx" path="/Users/macbookpro/work/lendsqrr/src/components/Stats.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="8" type="stmt"/>
+        <line num="34" count="8" type="stmt"/>
+        <line num="38" count="32" type="stmt"/>
+      </file>
+      <file name="Table.tsx" path="/Users/macbookpro/work/lendsqrr/src/components/Table.tsx">
+        <metrics statements="25" coveredstatements="23" conditionals="10" coveredconditionals="10" methods="12" coveredmethods="10"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="15" type="stmt"/>
+        <line num="17" count="15" type="stmt"/>
+        <line num="18" count="15" type="stmt"/>
+        <line num="20" count="15" type="stmt"/>
+        <line num="21" count="6" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="25" count="6" type="stmt"/>
+        <line num="26" count="6" type="stmt"/>
+        <line num="29" count="15" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="31" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="35" count="15" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="37" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="41" count="15" type="stmt"/>
+        <line num="47" count="90" type="stmt"/>
+        <line num="48" count="2" type="stmt"/>
+        <line num="51" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="58" count="11" type="stmt"/>
+        <line num="68" count="2" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+      </file>
+      <file name="TableActionMenu.tsx" path="/Users/macbookpro/work/lendsqrr/src/components/TableActionMenu.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+      </file>
+      <file name="TableFilter.tsx" path="/Users/macbookpro/work/lendsqrr/src/components/TableFilter.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="pages">
+      <metrics statements="54" coveredstatements="54" conditionals="26" coveredconditionals="20" methods="14" coveredmethods="14"/>
+      <file name="Login.tsx" path="/Users/macbookpro/work/lendsqrr/src/pages/Login.tsx">
+        <metrics statements="13" coveredstatements="13" conditionals="8" coveredconditionals="7" methods="5" coveredmethods="5"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="7" type="stmt"/>
+        <line num="8" count="7" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="10" count="7" type="stmt"/>
+        <line num="12" count="7" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="16" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="21" count="7" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+      </file>
+      <file name="UserDetails.tsx" path="/Users/macbookpro/work/lendsqrr/src/pages/UserDetails.tsx">
+        <metrics statements="18" coveredstatements="18" conditionals="8" coveredconditionals="7" methods="3" coveredmethods="3"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="50" count="5" type="stmt"/>
+        <line num="80" count="5" type="stmt"/>
+        <line num="94" count="5" type="stmt"/>
+        <line num="113" count="5" type="stmt"/>
+        <line num="114" count="3" type="stmt"/>
+        <line num="115" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="116" count="3" type="stmt"/>
+        <line num="117" count="2" type="stmt"/>
+        <line num="119" count="2" type="stmt"/>
+        <line num="121" count="3" type="stmt"/>
+        <line num="124" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="125" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="127" count="1" type="stmt"/>
+      </file>
+      <file name="Users.tsx" path="/Users/macbookpro/work/lendsqrr/src/pages/Users.tsx">
+        <metrics statements="23" coveredstatements="23" conditionals="10" coveredconditionals="6" methods="6" coveredmethods="6"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="10" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="12" count="7" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="14" count="7" type="stmt"/>
+        <line num="16" count="7" type="cond" truecount="1" falsecount="1"/>
+        <line num="17" count="7" type="stmt"/>
+        <line num="21" count="7" type="stmt"/>
+        <line num="23" count="10" type="stmt"/>
+        <line num="25" count="7" type="stmt"/>
+        <line num="28" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="32" count="7" type="stmt"/>
+        <line num="33" count="3" type="stmt"/>
+        <line num="34" count="3" type="stmt"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="37" count="3" type="stmt"/>
+        <line num="40" count="3" type="stmt"/>
+        <line num="41" count="3" type="stmt"/>
+        <line num="47" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="services">
+      <metrics statements="32" coveredstatements="30" conditionals="12" coveredconditionals="9" methods="3" coveredmethods="3"/>
+      <file name="userService.ts" path="/Users/macbookpro/work/lendsqrr/src/services/userService.ts">
+        <metrics statements="32" coveredstatements="30" conditionals="12" coveredconditionals="9" methods="3" coveredmethods="3"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="48" count="6" type="stmt"/>
+        <line num="49" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="54" count="5" type="stmt"/>
+        <line num="56" count="5" type="stmt"/>
+        <line num="58" count="5" type="stmt"/>
+        <line num="59" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="62" count="4" type="stmt"/>
+        <line num="65" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="67" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
+        <line num="72" count="1" type="stmt"/>
+        <line num="73" count="1" type="stmt"/>
+        <line num="77" count="3" type="stmt"/>
+        <line num="79" count="1" type="stmt"/>
+        <line num="80" count="1" type="stmt"/>
+        <line num="84" count="1" type="stmt"/>
+        <line num="86" count="2" type="stmt"/>
+        <line num="87" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="88" count="0" type="stmt"/>
+        <line num="89" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="93" count="2" type="stmt"/>
+        <line num="94" count="3" type="stmt"/>
+        <line num="96" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="97" count="1" type="stmt"/>
+        <line num="98" count="1" type="stmt"/>
+        <line num="102" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="styles.components">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="tableActionMenu.scss" path="/Users/macbookpro/work/lendsqrr/src/styles/components/tableActionMenu.scss">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="tableFilter.scss" path="/Users/macbookpro/work/lendsqrr/src/styles/components/tableFilter.scss">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="styles.pages">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="login.scss" path="/Users/macbookpro/work/lendsqrr/src/styles/pages/login.scss">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="user-details.scss" path="/Users/macbookpro/work/lendsqrr/src/styles/pages/user-details.scss">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="users.scss" path="/Users/macbookpro/work/lendsqrr/src/styles/pages/users.scss">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="utilities">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="_cleanDate.ts" path="/Users/macbookpro/work/lendsqrr/src/utilities/_cleanDate.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="11" type="stmt"/>
+        <line num="3" count="11" type="stmt"/>
+        <line num="4" count="11" type="stmt"/>
+      </file>
+      <file name="_currencyFormatter.ts" path="/Users/macbookpro/work/lendsqrr/src/utilities/_currencyFormatter.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="16" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

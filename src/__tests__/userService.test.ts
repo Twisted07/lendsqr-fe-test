@@ -16,28 +16,39 @@ describe('UserService', () => {
     vi.restoreAllMocks();
   });
 
-  it('positive scenario: fetches users successfully and caches in localStorage', async () => {
+  it('positive scenario: fetches users successfully without pagination', async () => {
     (globalThis.fetch as any).mockResolvedValue({
       ok: true,
       json: async () => mockUsers,
     });
 
-    const users = await fetchUsers();
-    expect(users.length).toBe(2);
-    expect(users[0].id).toBe("1");
+    const result = await fetchUsers();
+    expect(result.users.length).toBe(2);
+    expect(result.users[0].id).toBe("1");
+    expect(result.total).toBe(2);
     expect(globalThis.fetch).toHaveBeenCalledTimes(1);
+  });
 
+  it('positive scenario: fetches users successfully with pagination and caches', async () => {
+    (globalThis.fetch as any).mockResolvedValue({
+      ok: true,
+      json: async () => mockUsers,
+    });
+
+    const result = await fetchUsers(1);
+    expect(result.users.length).toBe(2);
+    
     // Check caching
-    const cached = localStorage.getItem('lendsqr_users');
+    const cached = localStorage.getItem('lendsqr_users_1');
     expect(cached).toBeDefined();
-    expect(JSON.parse(cached!)).toEqual(mockUsers);
+    expect(JSON.parse(cached!)).toEqual({ users: mockUsers, total: 2 });
   });
 
   it('positive scenario: fetches from localStorage if already cached', async () => {
-    localStorage.setItem('lendsqr_users', JSON.stringify(mockUsers));
+    localStorage.setItem('lendsqr_users_1', JSON.stringify({ users: mockUsers, total: 2 }));
     
-    const users = await fetchUsers();
-    expect(users.length).toBe(2);
+    const result = await fetchUsers(1);
+    expect(result.users.length).toBe(2);
     expect(globalThis.fetch).not.toHaveBeenCalled(); // Shouldn't fetch via network
   });
 
@@ -46,26 +57,31 @@ describe('UserService', () => {
       ok: false,
     });
 
-    const users = await fetchUsers();
-    expect(users).toEqual([]);
-    expect(localStorage.getItem('lendsqr_users')).toBeNull();
+    const result = await fetchUsers();
+    expect(result).toEqual({ users: [], total: 0 });
   });
 
   it('positive scenario: fetchUserById finds user and caches specifically', async () => {
-    localStorage.setItem('lendsqr_users', JSON.stringify(mockUsers));
+    (globalThis.fetch as any).mockResolvedValue({
+      ok: true,
+      json: async () => mockUsers,
+    });
     
     const user = await fetchUserById("1");
     expect(user).toBeTruthy();
     expect(user?.email).toBe('john@example.com');
     
     // Should cache specifically for user details page requirement
-    const specificCache = localStorage.getItem('lendsqr_selected_user');
+    const specificCache = localStorage.getItem('lendsqr_selected_user_1');
     expect(specificCache).toBeTruthy();
     expect(JSON.parse(specificCache!).id).toBe("1");
   });
 
   it('negative scenario: fetchUserById returns null for non-existent user', async () => {
-    localStorage.setItem('lendsqr_users', JSON.stringify(mockUsers));
+    (globalThis.fetch as any).mockResolvedValue({
+      ok: true,
+      json: async () => mockUsers,
+    });
     
     const user = await fetchUserById("999");
     expect(user).toBeNull();
