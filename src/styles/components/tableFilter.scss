@@ -1,0 +1,110 @@
+@use '../variables' as var;
+@use '../mixins' as mix;
+
+.table-filter {
+  position: absolute;
+  top: calc(100% + .5rem);
+  left: 0;
+  width: 27rem;
+  background: var.$bg-white;
+  border: 1px solid var.$border-color;
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  padding: 2.5rem 2rem;
+  z-index: 100;
+  cursor: default;
+  text-transform: none;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+
+    label {
+      font-weight: 500;
+      font-size: 1.4rem;
+      color: var.$text-color;
+    }
+
+    input, select {
+      width: 100%;
+      height: 4rem;
+      border: 1px solid rgba(33, 63, 125, 0.2);
+      border-radius: 8px;
+      padding: 0 1.5rem;
+      font-family: inherit;
+      font-size: 1.4rem;
+      color: var.$text-color;
+      background: #fff;
+      outline: none;
+
+      &::placeholder {
+        color: #545f7d;
+        opacity: 0.7;
+      }
+      
+      &:focus {
+        border-color: var.$primary-color;
+      }
+    }
+
+    select {
+      appearance: none;
+      background-image: url('data:image/svg+xml;utf8,<svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9L12 15L18 9" stroke="%23545F7D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 1.5rem center;
+      padding-right: 3rem;
+    }
+    
+    input[type="date"] {
+      appearance: none;
+      &::-webkit-calendar-picker-indicator {
+        opacity: 0.6;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 1.4rem;
+    margin-top: 1rem;
+
+    button {
+      flex: 1;
+      height: 4rem;
+      border-radius: 8px;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 1.4rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &.btn-reset {
+        background: transparent;
+        border: 1px solid var.$text-color;
+        color: var.$text-color;
+
+        &:hover {
+          background: rgba(84, 95, 125, 0.05);
+        }
+      }
+
+      &.btn-filter {
+        background: var.$primary-color;
+        border: 1px solid var.$primary-color;
+        color: var.$bg-white;
+
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+}
