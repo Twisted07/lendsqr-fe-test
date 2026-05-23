@@ -1,7 +1,6 @@
 import { MoreVertical } from 'lucide-react';
 import React, { useState, useEffect } from 'react'
 import { IoFilter } from 'react-icons/io5';
-import { useNavigate } from 'react-router-dom';
 import { _cleanDate } from '../utilities/_cleanDate';
 import type { User } from '../services/userService';
 import TableFilter from './TableFilter';

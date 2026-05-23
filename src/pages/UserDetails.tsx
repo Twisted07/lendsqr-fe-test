@@ -19,76 +19,76 @@ const UserDetails = () => {
     },
     {
       label: 'Phone Number',
-      value: user?.phone
+      value: user?.phone ?? 'N/A'
     },
     {
       label: 'Email Address',
-      value: user?.email
+      value: user?.email ?? 'N/A'
     },
     {
       label: 'Bvn',
-      value: user?.personalDetails?.bvn
+      value: user?.personalDetails?.bvn ?? 'N/A'
     },
     {
       label: 'Gender',
-      value: user?.personalDetails?.gender
+      value: user?.personalDetails?.gender ?? 'N/A'
     },
     {
       label: 'Marital Status',
-      value: user?.personalDetails?.maritalStatus
+      value: user?.personalDetails?.maritalStatus ?? 'N/A'
     },
     {
       label: 'Children',
-      value: user?.personalDetails?.children === 0 ? "None" : user?.personalDetails?.children
+      value: user?.personalDetails?.children === 0 ? "None" : (user?.personalDetails?.children ?? 'N/A')
     },
     {
       label: 'Type of Residence',
-      value: user?.personalDetails?.typeOfResidence
+      value: user?.personalDetails?.typeOfResidence ?? 'N/A'
     }
   ];
 
   const educationAndEmploymentList = [
     {
       label: 'Level of Education',
-      value: user?.educationAndEmployment?.level
+      value: user?.educationAndEmployment?.level ?? 'N/A'
     },
     {
       label: 'Employment Status',
-      value: user?.educationAndEmployment?.employmentStatus
+      value: user?.educationAndEmployment?.employmentStatus ?? 'N/A'
     },
     {
       label: 'Sector of Employment',
-      value: user?.educationAndEmployment?.sector
+      value: user?.educationAndEmployment?.sector ?? 'N/A'
     },
     {
       label: 'Duration of Employment',
-      value: user?.educationAndEmployment?.duration
+      value: user?.educationAndEmployment?.duration ?? 'N/A'
     },
     {
       label: 'Office Email',
-      value: user?.educationAndEmployment?.officeEmail
+      value: user?.educationAndEmployment?.officeEmail ?? 'N/A'
     },
     {
       label: 'Monthly Income',
-      value: `${_currencyFormatter(user?.educationAndEmployment?.monthlyIncome[0])} - ${_currencyFormatter(user?.educationAndEmployment?.monthlyIncome[1])}`
+      value: `${_currencyFormatter(user?.educationAndEmployment?.monthlyIncome?.[0] ?? '0')} - ${_currencyFormatter(user?.educationAndEmployment?.monthlyIncome?.[1] ?? '0')}`
     },
     {
       label: 'Loan Repayment',
-      value: _currencyFormatter(user?.educationAndEmployment?.loanRepayment)
+      value: _currencyFormatter(user?.educationAndEmployment?.loanRepayment ?? '0')
     }
   ];
   const socialsList = [
     {
       label: 'Twitter',
-      value: user?.socials?.twitter
+      value: user?.socials?.twitter ?? 'N/A'
     },
     {
       label: 'Facebook',
-      value: user?.socials?.facebook
+      value: user?.socials?.facebook ?? 'N/A'
     },
     {
       label: 'Instagram',
-      value: user?.socials?.instagram
+      value: user?.socials?.instagram ?? 'N/A'
     }
   ];
   const guarantorList = [
@@ -98,15 +98,15 @@ const UserDetails = () => {
     },
     {
       label: 'Phone Number',
-      value: user?.guarantor?.phone
+      value: user?.guarantor?.phone ?? 'N/A'
     },
     {
       label: 'Email Address',
-      value: user?.guarantor?.email
+      value: user?.guarantor?.email ?? 'N/A'
     },
     {
       label: 'Relationship',
-      value: user?.guarantor?.relationship
+      value: user?.guarantor?.relationship ?? 'N/A'
     }
   ];
 
@@ -131,8 +131,8 @@ const UserDetails = () => {
       <div className='header'>
         <h2 className="header__title">User Details</h2>
         <div className="header__buttons">
-          <ActionButton text='Blacklist User' className='blacklist' onClick={null} />
-          <ActionButton text='Activate User' className='activate' onClick={null} />
+          <ActionButton text='Blacklist User' className='blacklist' onClick={() => {}} />
+          <ActionButton text='Activate User' className='activate' onClick={() => {}} />
         </div>
       </div>
       <ProfileCard user={user} />
