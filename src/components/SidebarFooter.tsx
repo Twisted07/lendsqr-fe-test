@@ -1,7 +1,16 @@
+import { useNavigate } from 'react-router-dom';
+
 const SidebarFooter = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem('isAuthenticated');
+    navigate('/login');
+  };
+
   return (
     <div className='sidebar__footer'>
-      <button className='sidebar__footer--btn'>
+      <button type="button" className='sidebar__footer--btn' onClick={handleLogout}>
         <img src="/icons/logout.svg" alt="logout icon" className="sidebar__icon"/>
         Logout
       </button>

@@ -14,6 +14,7 @@ const Login = () => {
     // In a real app, perform validation and API call here.
     // For this assessment, any non-empty credential works.
     if (email && password) {
+      localStorage.setItem('isAuthenticated', 'true');
       navigate('/users');
     }
   };

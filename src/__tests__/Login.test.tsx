@@ -16,6 +16,7 @@ vi.mock('react-router-dom', async () => {
 describe('Login Component', () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    localStorage.clear();
   });
 
   test('renders login form correctly', () => {
@@ -37,6 +38,8 @@ describe('Login Component', () => {
   });
 
   test('positive scenario: successful login navigates to dashboard/users', () => {
+    const setItemSpy = vi.spyOn(localStorage, 'setItem');
+
     render(<BrowserRouter><Login /></BrowserRouter>);
     
     const emailInput = screen.getByPlaceholderText(/Email/i);
@@ -48,7 +51,10 @@ describe('Login Component', () => {
     
     fireEvent.submit(submitBtn);
 
+    expect(setItemSpy).toHaveBeenCalledWith('isAuthenticated', 'true');
     expect(mockedNavigate).toHaveBeenCalledWith('/users');
+
+    setItemSpy.mockRestore();
   });
 
   test('toggles password visibility', () => {
