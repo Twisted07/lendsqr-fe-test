@@ -88,7 +88,7 @@ build:
 #   php    → "vendor/bin/phpunit --coverage-clover coverage.xml"
 # -----------------------------------------------------------------------------
 test:
-  unit_command: "npx vitest run"              # Command to run unit tests (required)
+  unit_command: "npm ci && npx vitest run"              # Command to run unit tests (required)
   integration_command: ""               # Command to run integration tests (leave "" to skip)
   coverage_command: "npm run coverage"  # Command that generates coverage report
   coverage_threshold: 70                # Minimum % coverage required to pass (0 to disable)
