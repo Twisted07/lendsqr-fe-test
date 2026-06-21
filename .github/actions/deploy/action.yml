@@ -104,6 +104,8 @@ runs:
         # Expose secrets to the environment so the Python script can validate them
         RENDER_API_KEY: ${{ inputs.render_api_key }}
         VERCEL_TOKEN: ${{ inputs.vercel_token }}
+        VERCEL_PROJECT_ID: ${{ inputs.vercel_project_id }}
+        VERCEL_ORG_ID: ${{ inputs.vercel_org_id }}
         RAILWAY_TOKEN: ${{ inputs.railway_token }}
         HEROKU_API_KEY: ${{ inputs.heroku_api_key }}
       run: |
