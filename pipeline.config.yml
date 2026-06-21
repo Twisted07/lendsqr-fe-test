@@ -56,7 +56,7 @@ build:
   install_command: "npm ci"      # Command to install dependencies (required)
   build_command: "npm run build" # Set to "" if your project has no build step
 #  build_tool: "" # Uncomment this if the project is java (maven or gradle... maven is the default)
-  artifact_path: "build/"         # Path to output directory (uploaded between stages)
+  artifact_path: "dist/"         # Path to output directory (uploaded between stages)
                                  # Set to "" if no artifact is produced
 
 
