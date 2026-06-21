@@ -64,7 +64,7 @@ build:
 # TEST
 #
 # unit_command examples:
-#   node   → "npm test"
+#   node   → "npm test || npx vitest run"
 #   python → "pytest tests/unit"
 #   java   → "mvn -B test"
 #   go     → "go test ./... -short"
@@ -88,7 +88,7 @@ build:
 #   php    → "vendor/bin/phpunit --coverage-clover coverage.xml"
 # -----------------------------------------------------------------------------
 test:
-  unit_command: "vitest run"              # Command to run unit tests (required)
+  unit_command: "npx vitest run"              # Command to run unit tests (required)
   integration_command: ""               # Command to run integration tests (leave "" to skip)
   coverage_command: "npm run coverage"  # Command that generates coverage report
   coverage_threshold: 70                # Minimum % coverage required to pass (0 to disable)
