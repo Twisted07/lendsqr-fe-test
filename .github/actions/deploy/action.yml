@@ -91,10 +91,10 @@ runs:
     # ── Download build artifact ───────────────────────────────────────────────
     - name: Download build artifact
       uses: actions/download-artifact@v4
+      id: download-artifact
       with:
         name: build-artifact
-        run-id: ${{ github.event.workflow_run.id }}
-        path: ${{ steps.cfg.outputs.artifact_path }}
+        path: ./build-output
       continue-on-error: true   # Not all projects produce a build artifact
 
     # =========================================================================
