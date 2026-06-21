@@ -113,7 +113,7 @@ jobs:
 
           with open(out, 'a') as f:
               w(f, 'language',        rt.get('language', 'node'))
-              w(f, 'version',         rt.get('version', '20'))
+              w(f, 'version',         rt.get('version', '24'))
               w(f, 'deploy_target',   dep.get('target', ''))
               w(f, 'project_name',    proj.get('name', 'project'))
               w(f, 'auto_deploy',     str(dep.get('staging',{}).get('auto_deploy', True)).lower())
@@ -164,8 +164,8 @@ jobs:
           project_name:      ${{ needs.read-config.outputs.project_name }}
           # Vercel
           vercel_token:      ${{ secrets.VERCEL_TOKEN }}
-          vercel_org_id:     ${{ needs.read-config.outputs.vercel_org_id }}
-          vercel_project_id: ${{ needs.read-config.outputs.vercel_project_id }}
+          vercel_org_id:     ${{ secrets.VERCEL_ORG_ID }}
+          vercel_project_id: ${{ secrets.VERCEL_PROJECT_ID }}
           # Railway
           railway_token:     ${{ secrets.RAILWAY_TOKEN }}
           railway_service_id: ${{ needs.read-config.outputs.railway_svc_id }}
