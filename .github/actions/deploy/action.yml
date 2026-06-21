@@ -93,9 +93,8 @@ runs:
       uses: actions/download-artifact@v4
       with:
         name: build-artifact
-        uses: ci.yml
         run-id: ${{ github.event.workflow_run.id }}
-        path: ${{ inputs.artifact_path }}
+        path: ${{ steps.cfg.outputs.artifact_path }}
       continue-on-error: true   # Not all projects produce a build artifact
 
     # =========================================================================
