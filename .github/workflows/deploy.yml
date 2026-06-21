@@ -164,8 +164,8 @@ jobs:
           project_name:      ${{ needs.read-config.outputs.project_name }}
           # Vercel
           vercel_token:      ${{ secrets.VERCEL_TOKEN }}
-          vercel_org_id:     ${{ needs.read-config.outputs.vercel_org }}
-          vercel_project_id: ${{ needs.read-config.outputs.vercel_project }}
+          vercel_org_id:     ${{ needs.read-config.outputs.vercel_org_id }}
+          vercel_project_id: ${{ needs.read-config.outputs.vercel_project_id }}
           # Railway
           railway_token:     ${{ secrets.RAILWAY_TOKEN }}
           railway_service_id: ${{ needs.read-config.outputs.railway_svc_id }}
