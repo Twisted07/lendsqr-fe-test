@@ -93,6 +93,7 @@ runs:
       uses: actions/download-artifact@v4
       with:
         name: build-artifact
+        run-id: ${{ github.event.workflow_run.id }}
       continue-on-error: true   # Not all projects produce a build artifact
 
     # =========================================================================
