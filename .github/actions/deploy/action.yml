@@ -11,6 +11,10 @@ inputs:
   language:
     description: "Runtime language"
     required: true
+  ci_run_id:
+    description: "The ID of the triggering CI workflow run"
+    required: false
+    default: ""
 
   # Vercel
   vercel_token:
@@ -95,6 +99,7 @@ runs:
       with:
         name: build-artifact
         path: ./build-output
+        run-id: ${{ inputs.ci_run_id }}
       continue-on-error: true   # Not all projects produce a build artifact
 
     # =========================================================================
