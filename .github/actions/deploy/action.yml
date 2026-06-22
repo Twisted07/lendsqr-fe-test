@@ -98,8 +98,9 @@ runs:
       id: download-artifact
       with:
         name: build-artifact
-        path: ./build-output
         run-id: ${{ inputs.ci_run_id }}
+        github-token: ${{ github.token }}
+        repository: ${{ github.repository }}
       continue-on-error: true   # Not all projects produce a build artifact
 
     # =========================================================================
