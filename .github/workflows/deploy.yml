@@ -162,6 +162,7 @@ jobs:
           target:            ${{ needs.read-config.outputs.deploy_target }}
           language:          ${{ needs.read-config.outputs.language }}
           project_name:      ${{ needs.read-config.outputs.project_name }}
+          ci_run_id:         ${{ github.event.workflow_run.id }}
           # Vercel
           vercel_token:      ${{ secrets.VERCEL_TOKEN }}
           vercel_org_id:     ${{ secrets.VERCEL_ORG_ID }}
@@ -243,6 +244,7 @@ jobs:
           target:              ${{ needs.read-config.outputs.deploy_target }}
           language:            ${{ needs.read-config.outputs.language }}
           project_name:        ${{ needs.read-config.outputs.project_name }}
+          ci_run_id:         ${{ github.event.workflow_run.id }} 
           # Vercel
           vercel_token:      ${{ secrets.VERCEL_TOKEN }}
           vercel_org_id:     ${{ secrets.VERCEL_ORG_ID }}
