@@ -144,7 +144,7 @@ quality:
 security:
   dependency_scan: true         # Enable Dependabot dependency scanning
   secret_detection: true        # Enable GitHub push protection (secret scanning)
-  fail_on_high: false            # Fail the pipeline if high-severity vulnerabilities found
+  fail_on_high: true            # Fail the pipeline if high-severity vulnerabilities found
 
 
 # -----------------------------------------------------------------------------
